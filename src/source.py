@@ -1,8 +1,8 @@
-from factory_view  import FactoryView
-from enums.processing_mode_enum import ProcessingTypes
-from enums.graph_types_enum import GraphTypes
-from stores.edge_store import EdgeStore
-from stores.adj_store import AdjacencyStore
+from .factory_view  import FactoryView
+from .enums.processing_mode_enum import ProcessingTypes
+from .enums.graph_types_enum import GraphTypes
+from .stores.edge_store import EdgeStore
+from .stores.adj_store import AdjacencyStore
 
 class Source:
     def __init__(self) -> None:
