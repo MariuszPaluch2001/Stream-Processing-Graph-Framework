@@ -1,1 +1,1 @@
-from src.source import hello
+from .source import Source

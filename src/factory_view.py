@@ -1,5 +1,5 @@
 from enums.graph_types_enum import GraphTypes
-from graph_store import GraphStore
+from stores.graph_store import GraphStore
 import networkx as nx
 
 class FactoryView:
@@ -20,5 +20,5 @@ class FactoryView:
                 raise ValueError("Not exisiting graph type.")
     
     def create_view(self, graph: GraphStore, graph_type: GraphTypes) -> nx.Graph | nx.DiGraph | nx.MultiGraph | nx.MultiDiGraph:
-        G = self.__select_view(graph, graph_type)
+        G = self.__select_view(graph.get_graph(), graph_type)
         return G
