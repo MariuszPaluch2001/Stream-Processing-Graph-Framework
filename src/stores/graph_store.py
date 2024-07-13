@@ -1,6 +1,6 @@
 class GraphStore:
     def __init__(self):
-        raise NotImplementedError
+        pass
     
     def get_graph(self):
         raise NotImplementedError

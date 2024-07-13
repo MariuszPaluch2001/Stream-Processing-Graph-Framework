@@ -1,11 +1,13 @@
 from factory_view  import FactoryView
 from enums.processing_mode_enum import ProcessingTypes
 from enums.graph_types_enum import GraphTypes
+from stores.edge_store import EdgeStore
+from stores.adj_store import AdjacencyStore
 
 class Source:
     def __init__(self) -> None:
-        self.edge_store = None
-        self.adj_store = None
+        self.edge_store = EdgeStore()
+        self.adj_store = AdjacencyStore()
     
     def ingest(self, data):
         ...
