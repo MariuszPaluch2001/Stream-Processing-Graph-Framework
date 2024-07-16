@@ -5,7 +5,7 @@ class GraphStore:
     def get_snapshot(self):
         raise NotImplementedError
     
-    def add_edge(self, edge):
+    def update(self, edge):
         raise NotImplementedError
     
     def remove_edge(self, edge):

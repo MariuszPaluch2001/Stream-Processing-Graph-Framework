@@ -7,9 +7,9 @@ def test_init():
     assert edge_store.edge_log == []
     assert edge_store.snapshot_size == 4
 
-def test_add_edge():
+def test_update():
     edge_store = EdgeStore(4)
-    res = edge_store.add_edge((1,2))
+    res = edge_store.update((1,2))
     assert isinstance(res, EdgeInfo)
     assert res.edge == (1,2)
     assert res.update == UpdateInfo.ADD
@@ -34,10 +34,10 @@ def test_get_snapshot():
     
     edge_store = EdgeStore(snapshot_size)
 
-    edge_store.add_edge((1,2))
-    edge_store.add_edge((3,4))
-    edge_store.add_edge((5,6))
-    edge_store.add_edge((7,8))
+    edge_store.update((1,2))
+    edge_store.update((3,4))
+    edge_store.update((5,6))
+    edge_store.update((7,8))
     
     res = edge_store.get_snapshot()
     assert len(res) == snapshot_size
@@ -53,14 +53,14 @@ def test_get_historic_snapshot():
     
     edge_store = EdgeStore(snapshot_size)
 
-    edge_store.add_edge((1,2))
-    edge_store.add_edge((3,4))
-    edge_store.add_edge((5,6))
-    edge_store.add_edge((7,8))
-    edge_store.add_edge((9,10))
-    edge_store.add_edge((11,12))
-    edge_store.add_edge((13,14))
-    edge_store.add_edge((15,16))
+    edge_store.update((1,2))
+    edge_store.update((3,4))
+    edge_store.update((5,6))
+    edge_store.update((7,8))
+    edge_store.update((9,10))
+    edge_store.update((11,12))
+    edge_store.update((13,14))
+    edge_store.update((15,16))
 
     res = edge_store.get_historic_snapshot(0)
     assert len(res) == snapshot_size
