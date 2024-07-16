@@ -7,9 +7,9 @@ def test_init():
     assert edge_store.edge_log == []
     assert edge_store.snapshot_size == 4
 
-def test_add_edge():
+def test_update():
     edge_store = EdgeStore(4)
-    res = edge_store.add_edge((1,2))
+    res = edge_store.update((1,2))
     assert isinstance(res, EdgeInfo)
     assert res.edge == (1,2)
     assert res.update == UpdateInfo.ADD
