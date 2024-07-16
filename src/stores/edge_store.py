@@ -16,7 +16,7 @@ class EdgeStore(GraphStore):
     def get_snapshot(self) -> List[EdgeInfo]:
         return self.edge_log[-self.snapshot_size:]
 
-    def add_edge(self, edge) -> EdgeInfo:
+    def update(self, edge) -> EdgeInfo:
         edge_info = EdgeInfo(edge, UpdateInfo.ADD)
         self.edge_log.append(edge_info)
         return edge_info
